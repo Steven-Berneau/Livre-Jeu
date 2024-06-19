@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aventure index{% endblock %}
+
+{% block body %}
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="bg-light text-secondary">Id</th>
+                <th class="bg-light text-secondary">Titre</th>
+                <th class="bg-light text-secondary">Description</th>
+                <th class="bg-light text-secondary">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for aventure in aventures %}
+            <tr>
+                <td class="link-secondary bg-primary">{{ aventure.id }}</td>
+                <td class="link-secondary bg-primary">{{ aventure.titre }}</td>
+                <td class="link-secondary bg-primary">{{ aventure.description }}</td>
+                <td class="bg-primary">
+                    <a class="link-secondary" href="{{ path('app_aventure_show', {'id': aventure.id}) }}">show</a>
+                    <a class="link-secondary" href="{{ path('app_aventure_edit', {'id': aventure.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_aventure_new') }}">Create new</a>
+    </div>
+    <h1 class="text-warning">Aventure index</h1> 
+{% endblock %}

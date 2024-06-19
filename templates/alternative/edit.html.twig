@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Alternative{% endblock %}
+
+{% block body %}
+   
+
+    {{ include('alternative/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_alternative_index') }}">back to list</a>
+
+    {{ include('alternative/_delete_form.html.twig') }}
+    </div>
+     <h1 class="text-warning">Edit Alternative</h1>
+{% endblock %}

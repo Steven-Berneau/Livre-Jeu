@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Personnage
+{% endblock %}
+
+{% block body %}
+
+
+	{{ include('personnage/_form.html.twig') }}
+	<div class="d-grid gap-2 d-md-flex justify-content">
+		<a class="link-secondary btn btn-primary" href="{{ path('app_personnage_index') }}">back to list</a>
+	</div>
+
+	<h1 class="text-warning">Create new Personnage</h1>
+{% endblock %}

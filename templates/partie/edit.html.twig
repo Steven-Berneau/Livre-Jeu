@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Partie{% endblock %}
+
+{% block body %}
+   
+
+    {{ include('partie/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_partie_index') }}">back to list</a>
+   
+
+    {{ include('partie/_delete_form.html.twig') }}
+      </div>
+       <h1 class="text-warning">Edit Partie</h1>
+{% endblock %}

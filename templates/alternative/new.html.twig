@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Alternative{% endblock %}
+
+{% block body %}
+    
+
+    {{ include('alternative/_form.html.twig') }}
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_alternative_index') }}">back to list</a>
+    </div>
+    <h1 class="text-warning">Create new Alternative</h1>
+{% endblock %}

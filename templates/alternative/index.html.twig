@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alternative index{% endblock %}
+
+{% block body %}
+   
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="bg-light text-secondary">Id</th>
+                <th class="bg-light text-secondary">Texte_ambiance</th>
+                <th class="bg-light text-secondary">Libelle</th>
+                <th class="bg-light text-secondary">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alternative in alternatives %}
+            <tr>
+                <td class="link-secondary bg-primary">{{ alternative.id }}</td>
+                <td class="link-secondary bg-primary">{{ alternative.texteAmbiance }}</td>
+                <td class="link-secondary bg-primary">{{ alternative.libelle }}</td>
+                <td class="link-secondary bg-primary">
+                    <a class="link-secondary bg-primary" href="{{ path('app_alternative_show', {'id': alternative.id}) }}">show</a>
+                    <a class="link-secondary bg-primary" href="{{ path('app_alternative_edit', {'id': alternative.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucune alternative trouvée.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_alternative_new') }}">Create new</a>
+    </div>
+     <h1 class="text-warning">Alternative index</h1>
+{% endblock %}

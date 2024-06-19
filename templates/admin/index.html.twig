@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-secondary" href="#">Menu Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-secondary" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{{path('app_avatar_index')}}">Gérer les avatars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{{path('app_personnage_index')}}">Gérer les personnages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{{path('app_aventure_index')}}">Gérer les aventures</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{{path('app_etape_index')}}">Gérer les étapes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{{path('app_alternative_index')}}">Gérer les alternatives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{{path('app_partie_index')}}">Gérer les parties</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}

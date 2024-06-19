@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aventure{% endblock %}
+
+{% block body %}
+ 
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="link-secondary bg-primary">Id</th>
+                <td class="link-secondary bg-primary">{{ aventure.id }}</td>
+            </tr>
+            <tr>
+                <th class="link-secondary bg-primary">Titre</th>
+                <td class="link-secondary bg-primary">{{ aventure.titre }}</td>
+            </tr>
+            <tr>
+                <th class="link-secondary bg-primary">Description</th>
+                <td class="link-secondary bg-primary">{{ aventure.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_aventure_index') }}">back to list</a>
+
+    <a class="link-secondary btn btn-primary" href="{{ path('app_aventure_edit', {'id': aventure.id}) }}">edit</a>
+
+    {{ include('aventure/_delete_form.html.twig') }}
+    </div>
+       <h1 class="text-warning">Aventure</h1>
+{% endblock %}

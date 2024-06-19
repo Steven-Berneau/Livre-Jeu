@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avatar index{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="bg-light text-secondary" >Id</th>
+                <th class="bg-light text-secondary">Nom_fichier</th>
+                <th class="bg-light text-secondary">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for avatar in avatars %}
+            <tr>
+                <td  class="bg-primary text-secondary">{{ avatar.id }}</td>
+                <td class="bg-primary text-secondary">{{ avatar.nomFichier }}</td>
+                <td class="bg-primary">
+                    <a class="text-secondary" href="{{ path('app_avatar_show', {'id': avatar.id}) }}">show</a>
+                    <a class="text-secondary" href="{{ path('app_avatar_edit', {'id': avatar.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="d-grid gap-2 d-md-flex justify-content">
+  <a class="link-secondary btn btn-primary" href="{{ path('app_avatar_new') }}">Create new</a>
+  </div>
+
+  <h1 class="text-warning">Avatar index</h1>
+    
+{% endblock %}

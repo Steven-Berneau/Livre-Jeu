@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partie{% endblock %}
+
+{% block body %}
+    
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="link-secondary bg-primary">Id</th>
+                <td class="link-secondary bg-primary">{{ partie.id }}</td>
+            </tr>
+            <tr>
+                <th class="link-secondary bg-primary">Date_partie</th>
+                <td class="link-secondary bg-primary">{{ partie.datePartie ? partie.datePartie|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_partie_index') }}">back to list</a>
+
+    <a class="link-secondary btn btn-primary" href="{{ path('app_partie_edit', {'id': partie.id}) }}">edit</a>
+
+    {{ include('partie/_delete_form.html.twig') }}
+    </div>
+    <h1 class="text-warning">Partie</h1>
+{% endblock %}

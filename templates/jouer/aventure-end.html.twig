@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fin de l'aventure
+{% endblock %}
+
+
+{% block body %}
+
+{{partie.etape.texteAmbiance}}
+
+<p>Game Over, essaye encore!</p>
+<a class="link-secondary btn btn-primary"  href="{{path('app_jouer')}}">~ Retour au menu des personnages ~</a>
+
+ {% endblock %}

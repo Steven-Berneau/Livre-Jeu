@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Aventure{% endblock %}
+
+{% block body %}
+  
+
+    {{ include('aventure/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_aventure_index') }}">back to list</a>
+
+    {{ include('aventure/_delete_form.html.twig') }}
+    </div>
+    <h1 class="text-warning">Edit Aventure</h1>
+{% endblock %}

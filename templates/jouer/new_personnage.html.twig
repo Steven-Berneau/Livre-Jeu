@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau personnage
+{% endblock %}
+
+{% block body %}
+
+
+
+{{form_start(form)}}
+{{form_widget(form)}}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+	<button class="link-secondary btn btn-primary">Créer</button>
+</div>
+{{form_end(form)}}
+
+<h2 class="text-light">Créer un nouveau personnage</h2>
+{% endblock %}

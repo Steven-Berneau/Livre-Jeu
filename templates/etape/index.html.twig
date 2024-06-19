@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etape index{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="bg-light text-secondary">Id</th>
+                <th class="bg-light text-secondary">Texte_ambiance</th>
+                <th class="bg-light text-secondary">Libelle</th>
+                <th class="bg-light text-secondary">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etape in etapes %}
+            <tr>
+                <td class="link-secondary bg-primary">{{ etape.id }}</td>
+                <td class="link-secondary bg-primary">{{ etape.texteAmbiance }}</td>
+                <td class="link-secondary bg-primary">{{ etape.libelle }}</td>
+                <td class="link-secondary bg-primary">
+                    <a class="link-secondary bg-primary" href="{{ path('app_etape_show', {'id': etape.id}) }}">show</a>
+                    <a class="link-secondary bg-primary" href="{{ path('app_etape_edit', {'id': etape.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucune étape trouvée.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_etape_new') }}">Create new</a>
+</div>
+    <h1 class="text-warning">Etape index</h1>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choix de l'aventure
+{% endblock %}
+
+{% block body %}
+	<div class="row row-cols-1 row-cols-md-3">
+		<div class="card bg-primary">
+			<img src="{{asset('Images/Avatars/'~personnage.avatar.getNomFichier())}}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title text-secondary">
+					Vous avez selectionnez :
+					{{personnage.prenom}}
+					{{personnage.nom}}.
+				</h5>
+				<p class="card-text text-secondary">Bonne chance pour cette aventure !</p>
+			</div>
+		</div>
+
+
+		{% for aventure in aventures %}
+
+
+			<div class="card bg-primary">
+				<div class="card-body">
+					<h5 class="card-title text-secondary">Vous avez choisis cette aventure :
+						{{ aventure.titre }}.</h5>
+					<p class="card-text">
+						<a class='link-primary btn btn-secondary' href="{{path('app_start_aventure',{'idPersonnage':personnage.id,'idAventure':aventure.id}) }}">Jouer</a>
+					
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+	{% else %}
+		<tr>
+			<td colspan="4">Aucune aventure</td>
+		</tr>
+	{% endfor %}
+{% endblock %}

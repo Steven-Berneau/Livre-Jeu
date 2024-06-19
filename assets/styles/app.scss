@@ -1,0 +1,14 @@
+body {
+  background-color: skyblue;
+}
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background: url(/assets/Images/fond_accueil.png) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}

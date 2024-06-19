@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Aventure{% endblock %}
+
+{% block body %}
+  
+
+    {{ include('aventure/_form.html.twig') }}
+<div class="d-grid gap-2 d-md-flex justify-content">
+    <a class="link-secondary btn btn-primary" href="{{ path('app_aventure_index') }}">back to list</a>
+    </div>
+      <h1 class="text-warning">Create new Aventure</h1>
+{% endblock %}

@@ -1,0 +1,33 @@
+services:
+    web:
+        build: './docker-build/php/'
+        ports:
+            - "8002:443"
+        volumes:
+            - .:/var/www/livre-jeu
+        links:
+            - db:db
+    db:
+        image: mysql:8.3
+        build: './docker-build/mysql/'
+        volumes:
+            - ~/.docker/mysql:/var/lib/mysql
+        ports:
+            - "3022:3307"
+        environment:
+            - MYSQL_ROOT_PASSWORD=StevenAdmin
+    myadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8072:80"
+        links:
+            - db:db
+###> symfony/mailer ###
+    mailer:
+        image: axllent/mailpit
+        ports:
+            - "1025"
+            - "8025"
+        environment:
+            MP_SMTP_AUTH_ACCEPT_ANY: 1
+            MP_SMTP_AUTH_ALLOW_INSECURE: 1
